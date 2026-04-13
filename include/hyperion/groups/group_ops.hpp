@@ -38,10 +38,10 @@ struct GroupOps<Vector<Dim>> {
 
 template <typename TGroup>
 struct GroupOps {
-  // Definitions.
-  using Value = TGroup;
-  using AmbientVector = Vector<sym::StorageOps<TGroup>::StorageDim()>;
-  using AmbientMatrix = Matrix<sym::StorageOps<TGroup>::StorageDim()>;
+    // Definitions.
+    using Value = TGroup;
+    using AmbientVector = typename Value::DataVec;
+    using AmbientMatrix = Matrix<sym::StorageOps<TGroup>::StorageDim()>;
   using TangentVector = Vector<sym::LieGroupOps<TGroup>::TangentDim()>;
   using TangentMatrix = Matrix<sym::LieGroupOps<TGroup>::TangentDim()>;
 
